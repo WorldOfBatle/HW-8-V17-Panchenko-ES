@@ -11,7 +11,14 @@ long bin2dec(long n) {
 }
 
 void task1() {
-    std::cout << "\n--- Task 1 ---\n";
+    std::cout << "\n--- Task 1: перевод из двоичной в десятичную ---\n";
+
+    std::cout << "Введите бинарное число (состоящее из цифр 0 и 1): ";
+    long binary;
+    std::cin >> binary;
+
+    long decimal = bin2dec(binary);
+    std::cout << "Десятичный эквивалент: " << decimal << "\n";
 }
 
 void task2() {
