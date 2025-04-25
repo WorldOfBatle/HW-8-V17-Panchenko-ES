@@ -39,14 +39,29 @@ void task1() {
     std::cout << "Введите бинарное число (состоящее из цифр 0 и 1): ";
     long binary;
     std::cin >> binary;
+    std::cin.get(); // <-- убираем '\n', чтобы getline() во второй задаче не пропускался
 
     long decimal = bin2dec(binary);
     std::cout << "Десятичный эквивалент: " << decimal << "\n";
 }
 
 void task2() {
-    std::cout << "\n--- Task 2 ---\n";
+    std::cout << "\n--- Task 2: Замена слов, начинающихся с заглавной буквы, на многоточие ---\n";
+
+    // 1) выделяем память под строку
+    char* buffer = new char[256];
+    std::cout << "Введите строку (до 255 символов):\n";
+    std::cin.getline(buffer, 256);  // ожидаем ввод строки
+
+    // 2) вызываем рекурсивную функцию
+    replaceCapitalWords(buffer);
+
+    // 3) выводим результат
+    std::cout << "Результат: " << buffer << "\n";
+
+    delete[] buffer;
 }
+
 
 int main() {
     task1();
